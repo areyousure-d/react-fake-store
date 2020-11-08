@@ -1,0 +1,9 @@
+.productList {
+  flex: 0 0 65%;
+  min-height: 400px;
+  background-color: blue;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-gap: 20px;
+}

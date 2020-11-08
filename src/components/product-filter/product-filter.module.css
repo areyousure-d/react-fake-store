@@ -1,0 +1,16 @@
+.productFilter {
+  flex: 0 0 50px; 
+  background-color: red;
+  padding: 5px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+  align-content: center;
+  grid-gap: 5px;
+}
+
+.productFilter a {
+  text-align: center;
+  color: #000;
+}
+
