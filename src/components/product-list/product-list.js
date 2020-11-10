@@ -1,19 +1,23 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { FakestoreService } from '../../services';
 import ProductListItem from '../product-list-item';
 
 import styles from './product-list.module.css';
 
-const ProductList = ({ service, action }) => {
+const fakestoreService = new FakestoreService();
+
+const ProductList = ({ action }) => {
+
   const products = useSelector((state) => state.products.products);
   const loading = useSelector((state) => state.products.loading);
   const error = useSelector((state) => state.products.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(action(service));
-  }, []);
+    dispatch(action(fakestoreService));
+  }, [dispatch, action]);
 
   if (loading) {
     return (
@@ -31,6 +35,7 @@ const ProductList = ({ service, action }) => {
     return (
       <ProductListItem 
         key={item.id} 
+        id={item.id}
         title={item.title} 
         price={item.price} 
         category={item.category}

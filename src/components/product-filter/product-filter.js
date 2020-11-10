@@ -7,10 +7,10 @@ const ProductFilter = () => {
   return (
     <div className={styles.productFilter}>
       <Link to="/">Все продукты</Link>
-      <Link to="/">Мужская одежда</Link>
-      <Link to="/">Электроника</Link>
-      <Link to="/">Украшения</Link>
-      <Link to="/">Женская одежда</Link>
+      <Link to="/men_clothes">Мужская одежда</Link>
+      <Link to="/electronics">Электроника</Link>
+      <Link to="/jewelery">Украшения</Link>
+      <Link to="/women_clothes">Женская одежда</Link>
     </div>
   );
 };

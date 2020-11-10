@@ -1,7 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 import Container from '../container';
+import ToggleUsername from '../toggle-username';
+import UserMoney from '../user-money';
 
 import styles from './header.module.css';
 
@@ -12,9 +15,9 @@ const Header = () => {
       <Container className={clsx(styles.headerContainer)}>
         
         <div className={styles.links}>
-          <div>На главную</div>
-          <div>О нас</div>
-          <div>Контакты</div>
+          <div><Link to="/">На главную</Link></div>
+          <div><Link to="/about">О нас</Link></div>
+          <div><Link to="/contacts">Контакты</Link></div>
         </div> 
 
         <div className={styles.logo}>
@@ -22,9 +25,11 @@ const Header = () => {
         </div>
 
         <div className={styles.account}>
-          <div>$100</div>
-          <div>Аккаунт</div>
-          <div>Корзина</div>
+          <UserMoney />
+          <div className={styles.shoppingCart}>
+            <Link to="/shopping-cart">Корзина</Link>
+          </div>
+          <ToggleUsername />
         </div>
 
       </Container>
