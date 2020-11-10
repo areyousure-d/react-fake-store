@@ -5,19 +5,19 @@ import {
   CLEAR_CART,
 } from './action-types';
 
-const productAddedToCart = (productId) => ({
+const productAddedToCart = (product) => ({
   type: PRODUCT_ADDED_TO_CART,
-  payload: productId,
+  payload: product,
 });
 
-const productRemovedFromCart = (productId) => ({
+const productRemovedFromCart = (product) => ({
   type: PRODUCT_REMOVED_FROM_CART,
-  payload: productId,
+  payload: product,
 });
 
-const productTypeRemovedFromCart = (productId) => ({
+const productTypeRemovedFromCart = (product) => ({
   type: PRODUCT_TYPE_REMOVED_FROM_CART,
-  payload: productId,
+  payload: product,
 });
 
 const clearCart = () => ({

@@ -7,14 +7,16 @@ import { productAddedToCart } from '../../redux/actions';
 
 import styles from './product-list-item.module.css';
 
-const ProductListItem = ({ id, title, price, category, description, image }) => {
+const ProductListItem = ({ item }) => {
   const auth = useAuth();
   const dispatch = useDispatch();
 
   const clickHandler = (e) => {
     e.preventDefault();
-    dispatch(productAddedToCart(id));
+    dispatch(productAddedToCart(item));
   };
+
+  const { title, image, price } = item;
 
   return (
     <div className={styles.productListItem}>

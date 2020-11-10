@@ -8,7 +8,7 @@ const ShoppingCartList = () => {
 
   const list = cartItems.map((item) => {
     return (
-      <ShoppingCartListItem id={item.id} />
+      <ShoppingCartListItem key={item.id} item={item} />
     );
   });
 

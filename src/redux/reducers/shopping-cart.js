@@ -5,11 +5,25 @@ import {
   CLEAR_CART,
 } from '../actions/action-types';
 
-const updateCartItem = (productId, item = {}, quantity) => {
-  const { id = productId, count = 0 } = item;
+const updateCartItem = (product, item = {}, quantity) => {
+  const { 
+    id = product.id, 
+    count = 0,
+    title = product.title,
+    price = product.price,
+    category = product.category,
+    description = product.description,
+    image = product.image,
+  } = item;
+
   return {
     id,
     count: count + quantity,
+    title,
+    price,
+    category,
+    description,
+    image,
   };
 };
 
@@ -35,13 +49,14 @@ const updateCartItems = (cartItems, item, idx) => {
   ];
 };
 
-const updateOrder = (state, productId, quantity) => {
+const updateOrder = (state, product, quantity) => {
   const { cartItems } = state;
+  const { id: productId } = product;
 
   const itemIndex = state.cartItems.findIndex((item) => item.id === productId);
   const item = cartItems[itemIndex];
 
-  const newItem = updateCartItem(productId, item, quantity);
+  const newItem = updateCartItem(product, item, quantity);
 
   return {
     ...state,

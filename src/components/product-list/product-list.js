@@ -35,12 +35,7 @@ const ProductList = ({ action }) => {
     return (
       <ProductListItem 
         key={item.id} 
-        id={item.id}
-        title={item.title} 
-        price={item.price} 
-        category={item.category}
-        description={item.description}
-        image={item.image}
+        item={item}
       /> 
     );
   });
