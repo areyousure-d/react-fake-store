@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 import { useAuth } from '../../../hooks';
 import { 
@@ -23,7 +23,7 @@ const Signin = () => {
     dispatch(userSigninRequested());
     const { email, pass } = data;
     auth.signin(email, pass)
-      .then(() => dispatch(userSigninSuccess(auth.user.user.email)))
+      .then(() => dispatch(userSigninSuccess(email)))
       .catch((err) => dispatch(userSigninError(err.message)));
   };
 
@@ -34,23 +34,33 @@ const Signin = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSignin)}>
-      <h2>Войти</h2>
+    <form 
+      onSubmit={handleSubmit(onSignin)}
+      className={styles.signin}
+    >
+      <h2 className={styles.title}>Войти</h2>
       { error && <p>{ error }</p> }
       { loading && <p>Вход...</p>}
-      <input 
-        name="email"
-        type="email"
-        placeholder="Электронная почта"
-        ref={register}
-      />
-      <input 
-        name="pass"
-        type="password"
-        placeholder="Пароль"
-        ref={register}
-      />
-      <input type="submit" value="Войти" />
+
+      <div className={styles.inputs}>
+        <input 
+          name="email"
+          type="email"
+          placeholder="Электронная почта"
+          className={styles.email}
+          ref={register}
+        />
+        <input 
+          name="pass"
+          type="password"
+          placeholder="Пароль"
+          className={styles.password}
+          ref={register}
+        />
+        <input type="submit" value="Войти" className={styles.button} />
+      </div>
+
+      <Link to="/signup">Создать Аккаунт</Link>
     </form>
   );
 };

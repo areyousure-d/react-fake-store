@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { FakestoreService } from '../../services';
 import ProductListItem from '../product-list-item';
+import LoadingIndicator from '../loading-indicator';
+import ErrorIndicator from '../error-indicator';
 
 import styles from './product-list.module.css';
 
@@ -21,13 +23,17 @@ const ProductList = ({ action }) => {
 
   if (loading) {
     return (
-      <div className={styles.productList}>Loading...</div>
+      <div className={styles.productList}>
+        <LoadingIndicator />
+      </div>
     );
   }
 
   if (error) {
     return (
-      <div className={styles.productList}>Error</div>
+      <div className={styles.productList}>
+        <ErrorIndicator />
+      </div>
     );
   }
   

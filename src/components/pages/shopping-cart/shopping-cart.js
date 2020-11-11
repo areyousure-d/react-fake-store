@@ -2,12 +2,16 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import ShoppingCartList from '../../shopping-cart-list';
+import ShoppingCartInTotal from '../../shopping-cart-in-total';
+
+import styles from './shopping-cart.module.css';
 
 const ShoppingCart = () => {
 
   return (
-    <div>
-      <ShoppingCartList />
+    <div className={styles.shoppingCart}>
+      <ShoppingCartList className={styles.shoppingCartList} />
+      <ShoppingCartInTotal className={styles.shoppingCartInTotal} />
     </div>
   );
 };

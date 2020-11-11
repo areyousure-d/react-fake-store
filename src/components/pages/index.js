@@ -5,6 +5,7 @@ import ShoppingCart from './shopping-cart';
 import Signin from './signin';
 import Signup from './signup';
 import UserDetails from './user-details';
+import ProductDetails from './product-details';
 
 export {
   About,
@@ -14,5 +15,6 @@ export {
   Signin,
   Signup,
   UserDetails,
+  ProductDetails,
 };
 

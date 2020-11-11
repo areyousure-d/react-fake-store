@@ -1,0 +1,4 @@
+.shoppingCartList {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../hooks';
 import { productAddedToCart } from '../../redux/actions';
@@ -21,12 +22,16 @@ const ProductListItem = ({ item }) => {
   return (
     <div className={styles.productListItem}>
       <img src={image} alt="product" />
-      <p className={styles.productListItem__title}>{ title }</p>
-      <p>${ price }</p>
+      <Link 
+        to={`/products/${item.id}`} 
+        className={styles.productListItem__title}
+      >{ title }</Link>
+      <p className={styles.price}>${ price }</p>
       { auth.user && 
           <button 
             type="button"
             onClick={clickHandler}
+            className={styles.button}
           >
             Добавить в корзину
           </button>

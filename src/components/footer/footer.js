@@ -11,7 +11,11 @@ const Footer = () => {
       className={clsx(styles.footer)}
     >
       <Container>
-        Footer
+
+        <div>
+          FakeStore, 2020  
+        </div>
+
       </Container>
     </div>
   );

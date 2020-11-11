@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Container from '../container';
 import ToggleUsername from '../toggle-username';
 import UserMoney from '../user-money';
+import LinkToCart from '../link-to-cart';
 
 import styles from './header.module.css';
 
@@ -26,9 +27,7 @@ const Header = () => {
 
         <div className={styles.account}>
           <UserMoney />
-          <div className={styles.shoppingCart}>
-            <Link to="/shopping-cart">Корзина</Link>
-          </div>
+          <LinkToCart className={styles.shoppingCart} />
           <ToggleUsername />
         </div>
 

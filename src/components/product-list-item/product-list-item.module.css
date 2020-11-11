@@ -19,10 +19,25 @@
   object-fit: scale-down;
 }
 
-.productListItem p {
+.productListItem a {
   text-align: center;
+  color: #000;
+}
+
+.productListItem a:hover {
+  text-decoration: underline;
 }
 
 .productListItem__title {
   margin-bottom: 10px;
 }
+
+.price {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.button {
+  padding: 10px;
+}
+

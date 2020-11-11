@@ -1,0 +1,30 @@
+.shoppingCart {
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.shoppingCartList {
+  flex: 0 0 65%;
+}
+
+.shoppingCartInTotal {
+  flex: 0 0 30%;
+}
+
+@media (max-width: 768px) {
+  .shoppingCart {
+    flex-direction: column;
+  }
+
+  .shoppingCartInTotal {
+    order: 1;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .shoppingCartList {
+    order: 2;
+  }
+}
