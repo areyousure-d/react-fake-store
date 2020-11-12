@@ -65,7 +65,6 @@ const updateOrder = (state, product, quantity) => {
   };
 };
 
-// item = { id: 1, count: 1 }
 
 const initialState = {
   cartItems: [],

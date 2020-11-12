@@ -6,6 +6,9 @@ import {
   USER_SIGNIN_REQUEST,
   USER_SIGNIN_SUCCESS,
   USER_SIGNIN_FAILURE,
+
+  SET_USER_MONEY,
+  SET_USER_PURCHASED_ITEMS,
 } from '../actions/action-types';
 
 const initialState = {
@@ -13,6 +16,7 @@ const initialState = {
   loading: false,
   error: null,
   money: 200,
+  purchasedItems: [],
 };
 
 const user = (state = initialState, action) => {
@@ -29,6 +33,15 @@ const user = (state = initialState, action) => {
     case USER_SIGNUP_FAILURE:
     case USER_SIGNIN_FAILURE:
       return { ...state, loading: false, error: action.payload };
+
+    case SET_USER_MONEY:
+      return { ...state, money: action.payload };
+
+    case SET_USER_PURCHASED_ITEMS:
+      return { 
+        ...state, 
+        purchasedItems: [ ...state.purchasedItems, ...action.payload ]
+      };
 
     default:
       return state;

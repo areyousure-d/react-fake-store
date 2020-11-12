@@ -15,5 +15,9 @@ const LinkToCart = (props) => {
   );
 };
 
+LinkToCart.propTypes = {
+  className: PropTypes.string,
+};
+
 export default LinkToCart;
 

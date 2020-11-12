@@ -13,6 +13,8 @@ import {
   userSigninRequested,
   userSigninSuccess,
   userSigninError,
+  setUserMoney,
+  setUserPurchasedItems,
 } from './user-actions';
 import {
   productAddedToCart,
@@ -35,6 +37,8 @@ export {
   userSigninRequested,
   userSigninSuccess,
   userSigninError,
+  setUserMoney,
+  setUserPurchasedItems,
   
   productAddedToCart,
   productRemovedFromCart,

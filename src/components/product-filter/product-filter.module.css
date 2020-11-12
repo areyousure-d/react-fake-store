@@ -1,6 +1,5 @@
 .productFilter {
   flex: 0 0 50px; 
-  background-color: red;
   padding: 5px;
 
   display: grid;
@@ -11,6 +10,6 @@
 
 .productFilter a {
   text-align: center;
-  color: #000;
+  color: #898989;
 }
 

@@ -1,4 +1,10 @@
 .footer {
-  flex: 0 0 40px;
-  background-color: red;
+  /* flex: 0 0 40px; */
+  height: 40px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -6,7 +6,6 @@ import Footer from '../footer';
 
 import './nullstyles.css';
 import './app.css';
-import styles from './app.module.css';
 
 const App = () => {
   return (

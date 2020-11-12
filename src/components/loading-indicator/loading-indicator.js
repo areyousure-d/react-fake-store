@@ -1,8 +1,10 @@
 import React from 'react';
 
+import styles from './loading-indicator.module.css';
+
 const LoadingIndicator = () => {
   return (
-    <div>
+    <div className={styles.loadingIndicator}>
       Loading...
     </div>
   );

@@ -1,13 +1,19 @@
 html, body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Condensed', 'Montserrat', sans-serif;
+  color: #9a9a9a;
 }
 
 #root {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  background-color: #f8f8fa;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+a {
+  color: #9a9a9a;
 }
 

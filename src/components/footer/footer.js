@@ -10,7 +10,7 @@ const Footer = () => {
     <div 
       className={clsx(styles.footer)}
     >
-      <Container>
+      <Container className={styles.footerContainer}>
 
         <div>
           FakeStore, 2020  

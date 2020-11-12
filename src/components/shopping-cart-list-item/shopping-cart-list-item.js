@@ -36,7 +36,7 @@ const ShoppingCartListItem = ({ item }) => {
               type="button" 
               className={styles.btn_minus}
               onClick={removeFromCart}
-            >-</button>
+            >—</button>
             { item.count }
             <button 
               type="button" 
@@ -49,6 +49,10 @@ const ShoppingCartListItem = ({ item }) => {
       </div>
     </div>
   );
+};
+
+ShoppingCartListItem.propTypes = {
+  item: PropTypes.object,
 };
 
 export default ShoppingCartListItem;

@@ -31,5 +31,9 @@ const ShoppingCartList = (props) => {
   );
 };
 
+ShoppingCartList.propTypes = {
+  className: PropTypes.string,
+};
+
 export default ShoppingCartList;
 

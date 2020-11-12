@@ -1,8 +1,11 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../../hooks';
+import { clearCart } from '../../../redux/actions';
+import AddMoneyForm from '../../add-money-form';
+import UserDetailsList from '../../user-details-list';
 
 import styles from './user-details.module.css';
 
@@ -10,28 +13,59 @@ const UserDetails = () => {
   const dispatch = useDispatch();
   const auth = useAuth();
   const history = useHistory();
+  const [showForm, setShowForm] = useState(false);
 
-  const email = auth.user.user.email;
+  const money = useSelector((state) => state.user.money);
+  const email = auth.user.user.email ? auth.user.user.email : '';
 
   const signoutHandler = (e) => {
     e.preventDefault();
     auth.signout();
+    dispatch(clearCart());
     history.push("/");
   };
   
+  const showFormHandler = () => {
+    setShowForm(true);
+  };
+
+  const hideFormHandler = () => {
+    setShowForm(false);
+  };
+
   return (
     <div className={styles.userDetails}>
 
       <div className={styles.email}>
         <div>
-          Ваш email: { email }
+          Вы вошли как: { email }
         </div>
-        <div className={styles.signout}>
-          <button type="button" onClick={signoutHandler}>
-            Выйти
-          </button> 
-        </div>
+        <button 
+          className={styles.signout} 
+          type="button" 
+          onClick={signoutHandler}
+        >
+          Выйти
+        </button> 
       </div>
+
+      <div className={styles.balance}>
+        <div className={styles.currentMoney}>
+          Ваш баланс: ${ money }
+        </div>
+        
+        { showForm
+          ? <AddMoneyForm money={money} hideFormHandler={hideFormHandler} />
+          : <button 
+              className={styles.balanceBtn} 
+              onClick={showFormHandler}
+            >
+              Пополнить
+            </button>
+        }
+      </div>
+
+      <UserDetailsList />
 
     </div>
   );

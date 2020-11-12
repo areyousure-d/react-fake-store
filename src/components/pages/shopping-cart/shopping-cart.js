@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import ShoppingCartList from '../../shopping-cart-list';
 import ShoppingCartInTotal from '../../shopping-cart-in-total';
