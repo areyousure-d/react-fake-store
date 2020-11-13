@@ -1,6 +1,6 @@
-#react-fake-store
+# react-fake-store
 
-react + redux.
+Использованы **React + Redux.**
 
 Небольшой интернет магазин, создан с помощью create-react-app.
 Данные взяты отсюда [https://fakestoreapi.com/](https://fakestoreapi.com/)
