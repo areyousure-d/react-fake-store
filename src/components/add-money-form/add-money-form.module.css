@@ -4,11 +4,14 @@
 
 .money {
   width: 60px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .submit {
-  padding: 5px;
+  padding: 10px;
+  background-color: rgba(40, 42, 143, 1);
+  color: #fff;
+  font-family: 'Montserat', sans-serif;
 }
 
 

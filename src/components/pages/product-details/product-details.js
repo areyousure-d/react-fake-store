@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useAuth } from '../../../hooks';
 import { 
   fetchProductById,
   productAddedToCart,
@@ -15,6 +16,8 @@ import styles from './product-details.module.css';
 const fakestoreService = new FakestoreService();
 
 const ProductDetails = () => {
+  const auth = useAuth();
+
   const dispatch = useDispatch();
   let { id } = useParams();
   id = Number(id);
@@ -65,6 +68,7 @@ const ProductDetails = () => {
             className={styles.button}
             onClick={addToCartHandler} 
             type="button"
+            disabled={!auth.getAccessToken()}
           >Добавить в корзину</button>
         </div>
       </div>

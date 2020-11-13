@@ -19,6 +19,8 @@ const Signup = () => {
 
   const { register, handleSubmit, watch, errors } = useForm();
 
+  const isPasswordsEqual = watch('pass') === watch('passConfirm');
+
   const onSignup = (data) => {
     const { email, pass } = data; 
     dispatch(userSignupRequested());
@@ -48,22 +50,60 @@ const Signup = () => {
           type="email" 
           placeholder="Электронная почта" 
           className={styles.email}
-          ref={register} 
+          ref={register({
+            required: true,
+          })} 
         />
+            { errors.email && 
+                <div className={styles.validationError}>
+                  Емеил обязателен  
+                </div>
+            }
         <input 
           name="pass" 
           type="password" 
           placeholder="Пароль" 
           className={styles.password}
-          ref={register} 
+          ref={register({
+            required: true,
+            minLength: 4,
+            maxLength: 128,
+          })} 
         />
+            { errors.pass && errors.pass.type === 'required' &&
+                <div className={styles.validationError}>
+                  Пароль обязателен  
+                </div>
+            }
+            { errors.pass && errors.pass.type === 'minLength' &&
+                <div className={styles.validationError}>
+                  Пароль слишком короткий 
+                </div>
+            }
+            { errors.pass && errors.pass.type === 'maxLength' &&
+                <div className={styles.validationError}>
+                  Пароль слишком длинный 
+                </div>
+            }
         <input 
           name="passConfirm" 
           type="password" 
           placeholder="Пароль" 
           className={styles.passwordConfirm}
-          ref={register} 
+          ref={register({
+            required: true,
+          })} 
         />
+            { errors.passConirm && errors.passConfirm.type === 'required' &&
+                <div className={styles.validationError}>
+                  Пароль обязателен
+                </div>
+            }
+            { !isPasswordsEqual &&
+                <div className={styles.validationError}>
+                  Пароли не совпадают
+                </div>
+            }
         <input type="submit" value="Регистрация" className={styles.button} />
       </div>
       

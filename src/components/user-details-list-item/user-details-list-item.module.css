@@ -3,6 +3,8 @@
   margin-top: 20px;
   padding: 10px;
   background-color: #fff;
+  box-shadow: 0 0 15px 1px rgba(220, 220, 240, .5);
+
   
   display: inline-flex;
   align-items: stretch;

@@ -4,6 +4,7 @@
   margin: 0 auto;
   margin-top: 50px;
   background-color: #fff;
+  box-shadow: 0 0 15px 1px rgba(220, 220, 240, .5);
 
   display: flex;
   flex-direction: column;
@@ -31,8 +32,8 @@
 
 .inputs input {
   padding: 5px;
-  margin-bottom: 5px;
-  border: 1px solid #000;
+  margin-top: 5px;
+  border: 1px solid #9a9a9a;
 }
 
 .input input:last-child {
@@ -41,5 +42,17 @@
 
 .button:hover {
   cursor: pointer;
+}
+
+.button {
+  padding: 10px;
+  background-color: rgba(40, 42, 143, 1);
+  color: #fff;
+  font-family: 'Montserat', sans-serif;
+}
+
+.validationError {
+  padding: 4px;
+  font-size: .8rem;
 }
 

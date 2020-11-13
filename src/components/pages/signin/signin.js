@@ -48,15 +48,29 @@ const Signin = () => {
           type="email"
           placeholder="Электронная почта"
           className={styles.email}
-          ref={register}
+          ref={register({
+            required: true,
+          })}
         />
+            { errors.email && 
+                <div className={styles.validationError}>
+                  Емеил обязателен
+                </div>
+            }
         <input 
           name="pass"
           type="password"
           placeholder="Пароль"
           className={styles.password}
-          ref={register}
+          ref={register({
+            required: true,
+          })}
         />
+            { errors.pass && 
+                <div className={styles.validationError}>
+                  Пароль обязателен
+                </div>
+            }
         <input type="submit" value="Войти" className={styles.button} />
       </div>
 
