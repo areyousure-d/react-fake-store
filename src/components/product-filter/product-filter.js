@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import styles from './product-filter.module.css';
+import styles from "./product-filter.module.css";
 
 const ProductFilter = () => {
   return (
@@ -11,9 +11,9 @@ const ProductFilter = () => {
       <Link to="/electronics">Электроника</Link>
       <Link to="/jewelery">Украшения</Link>
       <Link to="/women_clothes">Женская одежда</Link>
+      <div>dlsfjsdf</div>
     </div>
   );
 };
 
 export default ProductFilter;
-
