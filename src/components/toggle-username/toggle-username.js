@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { useAuth } from '../../hooks';
+import { useAuth } from "../../hooks";
 
 const ToggleUsername = () => {
   const auth = useAuth();
@@ -15,14 +15,13 @@ const ToggleUsername = () => {
     );
   }
 
-  const username = user.user.email.split('@').[0];
+  const username = user.user.email.split("@")[0];
 
   return (
     <div>
-      <Link to="/user-details">{ username }</Link>
+      <Link to="/user-details">{username}</Link>
     </div>
   );
 };
 
 export default ToggleUsername;
-

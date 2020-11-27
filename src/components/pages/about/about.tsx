@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from "react";
 
-import styles from './about.module.css';
+import styles from "./about.module.css";
 
-const About = () => {
+const About: FC = () => {
   return (
     <div className={styles.about}>
       <h2>Мы компания FakeStore</h2>
@@ -13,4 +13,3 @@ const About = () => {
 };
 
 export default About;
-
