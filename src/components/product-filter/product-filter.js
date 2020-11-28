@@ -11,7 +11,6 @@ const ProductFilter = () => {
       <Link to="/electronics">Электроника</Link>
       <Link to="/jewelery">Украшения</Link>
       <Link to="/women_clothes">Женская одежда</Link>
-      <div>dlsfjsdf</div>
     </div>
   );
 };

@@ -17,18 +17,23 @@ import {
   FETCH_PRODUCT_BY_ID_REQUEST,
   FETCH_PRODUCT_BY_ID_SUCCESS,
   FETCH_PRODUCT_BY_ID_FAILURE,
-} from '../actions/action-types';
+} from "../actions/action-types";
 
-const initialState = {
+import { IProductsState } from "./types/products-types";
+import { ProductActionsType } from "../actions/types/product-actions-types";
+
+const initialState: IProductsState = {
   loading: false,
   products: [],
   error: null,
   product: {},
 };
 
-export default function products(state = initialState, action) {
+export default function products(
+  state = initialState,
+  action: ProductActionsType
+): IProductsState {
   switch (action.type) {
-
     case FETCH_ALL_PRODUCTS_REQUEST:
     case FETCH_WOMEN_CLOTHES_REQUEST:
     case FETCH_MEN_CLOTHES_REQUEST:
@@ -63,4 +68,3 @@ export default function products(state = initialState, action) {
       return state;
   }
 }
-
