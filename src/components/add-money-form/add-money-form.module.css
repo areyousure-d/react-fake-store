@@ -14,4 +14,7 @@
   font-family: 'Montserat', sans-serif;
 }
 
-
+.errorMessage {
+  margin: 0 10px;
+  color: rgb(250, 50, 50);
+}

@@ -1,3 +1,5 @@
+import { Action } from "redux";
+import { ThunkAction } from "redux-thunk";
 import {
   FETCH_ALL_PRODUCTS_REQUEST,
   FETCH_ALL_PRODUCTS_SUCCESS,
@@ -18,6 +20,8 @@ import {
   FETCH_PRODUCT_BY_ID_SUCCESS,
   FETCH_PRODUCT_BY_ID_FAILURE,
 } from "../../actions/action-types";
+
+import { RootStateType } from "../../reducers";
 
 import { IProduct } from "../../reducers/types/products-types";
 
@@ -126,3 +130,15 @@ export type ProductActionsType =
   | ProductByIdRequestedType
   | ProductByIdLoadedType
   | ProductByIdErrorType;
+
+export type FetchProductsThunk<
+  ProductActionsType extends Action,
+  ReturnType = void
+> = ThunkAction<ReturnType, RootStateType, unknown, ProductActionsType>;
+
+export type FetchProductsThunkResult<> = ThunkAction<
+  void,
+  RootStateType,
+  unknown,
+  ProductActionsType
+>;

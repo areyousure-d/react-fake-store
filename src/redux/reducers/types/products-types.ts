@@ -15,5 +15,5 @@ export interface IProductsState {
   loading: boolean;
   products: IProduct[];
   error: string | null;
-  product: IProductInState | {};
+  product: IProduct;
 }

@@ -1,9 +1,9 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { FC } from "react";
+import { Route, Switch } from "react-router-dom";
 
-import PrivateRoute from '../private-route';
-import Container from '../container';
-import { 
+import PrivateRoute from "../private-route";
+import Container from "../container";
+import {
   ProductPage,
   About,
   Contacts,
@@ -12,15 +12,14 @@ import {
   ShoppingCart,
   UserDetails,
   ProductDetails,
-} from '../pages';
+} from "../pages";
 
-import styles from './main.module.css';
+import styles from "./main.module.css";
 
-const Main = () => {
+const Main: FC = () => {
   return (
     <div className={styles.main}>
       <Container className={styles.mainContainer}>
-
         <Switch>
           <Route path="/about" component={About} />
           <Route path="/contacts" component={Contacts} />
@@ -31,11 +30,9 @@ const Main = () => {
           <PrivateRoute path="/user-details" component={UserDetails} />
           <Route path="/" component={ProductPage} />
         </Switch>
-
       </Container>
     </div>
   );
 };
 
 export default Main;
-

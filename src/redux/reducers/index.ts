@@ -1,13 +1,15 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import products from './products';
-import user from './user';
-import shoppingCart from './shopping-cart';
+import products from "./products";
+import user from "./user";
+import shoppingCart from "./shopping-cart";
 
-export default combineReducers({
+const rootReducer = combineReducers({
   products,
   user,
   shoppingCart,
 });
 
+export type RootStateType = ReturnType<typeof rootReducer>;
 
+export default rootReducer;

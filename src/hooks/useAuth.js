@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import fakeAuth from "fake-auth";
+import fakeAuth from "fake-auth"; // todo: add type declaration for fakeAuth
 
 const authContext = createContext();
 
+// todo: add types
 export function ProvideAuth({ children }) {
   const auth = useProvideAuth();
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;

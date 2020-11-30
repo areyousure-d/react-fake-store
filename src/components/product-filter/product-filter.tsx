@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./product-filter.module.css";
 
-const ProductFilter = () => {
+const ProductFilter: FC = () => {
   return (
     <div className={styles.productFilter}>
       <Link to="/">Все продукты</Link>

@@ -43,7 +43,7 @@ import {
 } from "./types/product-actions-types";
 
 import { IProductInState } from "../../redux/reducers/types/products-types";
-import { RootStateType } from "../reducers/types/rootStateType";
+import { RootStateType } from "../reducers";
 
 const allProductsRequested = (): AllProductsRequestedType => {
   return {

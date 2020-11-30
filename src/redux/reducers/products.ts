@@ -26,7 +26,14 @@ const initialState: IProductsState = {
   loading: false,
   products: [],
   error: null,
-  product: {},
+  product: {
+    id: 0,
+    title: "",
+    image: "",
+    category: "",
+    description: "",
+    price: 0,
+  },
 };
 
 export default function products(
@@ -56,13 +63,37 @@ export default function products(
       return { ...state, loading: false, error: action.payload, products: [] };
 
     case FETCH_PRODUCT_BY_ID_REQUEST:
-      return { ...state, loading: true, error: null, product: {} };
+      return {
+        ...state,
+        loading: true,
+        error: null,
+        product: {
+          id: 0,
+          title: "",
+          image: "",
+          category: "",
+          description: "",
+          price: 0,
+        },
+      };
 
     case FETCH_PRODUCT_BY_ID_SUCCESS:
       return { ...state, loading: false, error: null, product: action.payload };
 
     case FETCH_PRODUCT_BY_ID_FAILURE:
-      return { ...state, loading: false, error: action.payload, product: {} };
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+        product: {
+          id: 0,
+          title: "",
+          image: "",
+          category: "",
+          description: "",
+          price: 0,
+        },
+      };
 
     default:
       return state;

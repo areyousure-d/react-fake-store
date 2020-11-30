@@ -1,8 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 
 import styles from "./user-details-list-item.module.css";
 
-const UserDetailsListItem = ({ item }) => {
+import { IProductInState } from "../../redux/reducers/types/products-types";
+
+type UserDetailsListItemType = {
+  item: IProductInState;
+};
+
+const UserDetailsListItem: FC<UserDetailsListItemType> = (props) => {
+  const { item } = props;
+
   return (
     <div className={styles.userDetailsListItem}>
       <div className={styles.imageContainer}>

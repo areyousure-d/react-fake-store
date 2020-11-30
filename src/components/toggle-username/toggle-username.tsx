@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { useAuth } from "../../hooks";
 
-const ToggleUsername = () => {
+const ToggleUsername: FC = () => {
   const auth = useAuth();
   const user = auth.user;
 

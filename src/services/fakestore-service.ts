@@ -1,46 +1,44 @@
+// todo: add types
 export default class FakestoreService {
+  _apiBase = "https://fakestoreapi.com";
 
-  _apiBase = 'https://fakestoreapi.com'; 
-
-  getResource = async (url) => {
+  getResource = async (url: string) => {
     const res = await fetch(`${this._apiBase}${url}`);
 
     if (!res.ok) {
       throw new Error(`Could not fetch ${url}, recieved ${res.status}`);
     }
     return await res.json();
-  }
+  };
 
   getAllProducts = async () => {
-    const res = await this.getResource('/products/');
+    const res = await this.getResource("/products/");
     return res;
-  }
+  };
 
-  getProductById = async (id) => {
+  getProductById = async (id: number) => {
     const res = await this.getResource(`/products/${id}`);
     return res;
-  }
+  };
 
-  getProductsInCategory = async (category) => {
+  getProductsInCategory = async (category: string) => {
     const res = await this.getResource(`/products/category/${category}`);
     return res;
-  }
+  };
 
   getJeweleryProducts = async () => {
-    return this.getProductsInCategory('jewelery');
-  }
+    return this.getProductsInCategory("jewelery");
+  };
 
   getMenClosingProducts = async () => {
-    return this.getProductsInCategory('men clothing');
-  }
+    return this.getProductsInCategory("men clothing");
+  };
 
   getWomenClosingProducts = async () => {
-    return this.getProductsInCategory('women clothing');
-  }
+    return this.getProductsInCategory("women clothing");
+  };
 
   getElectronicProducts = async () => {
-    return this.getProductsInCategory('electronics');
-  }
-
+    return this.getProductsInCategory("electronics");
+  };
 }
-
