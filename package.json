@@ -2,7 +2,7 @@
   "name": "react-fake-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://areyousure92.github.io/react-fake-store",
+  "homepage": "http://areyousure-d.github.io/react-fake-store",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
